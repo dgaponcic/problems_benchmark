@@ -1,0 +1,39 @@
+<!-- <div class="form-group">
+  <label for="file">Choose File</label>
+  <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+</div> -->
+<!-- <div>
+  <input id="fileInput" type="file" class="ng-hide" (change)="handleFileInput($event.target.files)">
+  <md-button id="uploadButton" class="md-primary" aria-label="attach_file">
+    Choose file
+  </md-button>
+  <md-input-container md-no-float>
+    <input id="textInput" ng-model="fileName" type="text" placeholder="No file chosen" ng-readonly="true">
+  </md-input-container>
+</div> -->
+
+<!-- <div *ngIf="result.length > 0">
+  <app-benchmark-result [result]="result"></app-benchmark-result>
+</div> -->
+
+<div>
+  <div style="margin-bottom: 5%">
+    <input hidden type="file" id="file-input" #uploader (change)="handleFileInput($event.target.files)" />
+
+    <button mat-button (click)="uploader.click()">
+      <div class="icon">
+        <mat-icon color="accent" [inline]="true">note_add</mat-icon>
+      </div>
+    </button>
+    <ng-container *ngIf="fileToUpload"> {{fileToUpload.name}}</ng-container>
+    <ng-container *ngIf="!fileToUpload"> choose file</ng-container>
+    <ng-container *ngIf="fileToUpload && !result">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </ng-container>
+
+  </div>
+
+  <div *ngIf="result">
+    <app-benchmark-result [result]="result" [problemId]="id"></app-benchmark-result>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+ul {
+  font-size: larger;
+}
+
+#problem {
+  display: block;
+  width: 1300px;
+  padding-top: 25px;
+}
+
+#problemLink, #result {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#problemLink {
+  width: 1200px;
+}

@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/">Home</a>
+
+    <a *ngIf="isAllowed()" class="nav-item nav-link" routerLink="/add/problem">Add</a>
+    <!-- <a *ngIf="false" class="nav-item nav-link" routerLink="/add/test">Add Tests</a> -->
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <router-outlet></router-outlet>
+</div>

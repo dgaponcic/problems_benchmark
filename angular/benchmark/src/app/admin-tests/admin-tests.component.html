@@ -1,0 +1,33 @@
+<app-search-problems (problemChange)="onProblemSelected($event)"></app-search-problems>
+
+<!-- <app-voter *ngFor="let voter of voters" [name]="voter" (voted)="onVoted($event)">
+</app-voter> -->
+
+<section *ngFor="let test of tests; let last = last; let i = index;">
+
+  <div style="margin-bottom: 2%">
+    <label for="file">Test Input </label>
+    <input type="file" id="file-input" #uploader (change)="uploadFiles($event.target.files, 'input', i)" />
+
+    <button mat-button (click)=" uploader.click()"></button>
+
+
+    <label for="file">Test Output </label>
+    <input type="file" id="file-input" #uploader (change)="uploadFiles($event.target.files, 'output', i)" />
+
+    <button mat-button (click)=" uploader.click()"></button>
+
+    <button *ngIf="last" mat-fab color="warn" style="display:inline;" (click)="addTest()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+</section>
+
+<ng-container *ngIf="submitted && !result">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-container>
+
+<button (click)="submit()" class=" btn btn-primary">
+  Submit
+</button>

@@ -1,0 +1,11 @@
+<!-- <app-header></app-header> -->
+<div *ngIf="problem">
+
+  <h3>{{problem.title}}</h3>
+  <p>{{problem.description}}</p>
+  <p><b>Input:</b> {{problem.input_cond}}</p>
+  <p><b>Output:</b> {{problem.output_cond}}</p>
+  <p>Time limit: {{problem.time_limit}} seconds</p>
+
+  <app-benchmark [id]="id"></app-benchmark>
+</div>

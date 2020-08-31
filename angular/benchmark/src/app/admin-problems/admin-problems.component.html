@@ -1,0 +1,43 @@
+<div class="lead">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <h2>Add Problem</h2>
+      <form [formGroup]="addProblemForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" formControlName="title" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="input_cond">Input conditions</label>
+          <input type="text" formControlName="input_cond" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="output_cond">Output conditions</label>
+          <input type="text" formControlName="output_cond" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="time_limit">Time limit</label>
+          <input type="number" formControlName="time_limit" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" formControlName="description" class="form-control" />
+        </div>
+
+
+        <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Add Problem
+          </button>
+          <a routerLink="/add/tests" class="btn btn-link">Add Tests</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

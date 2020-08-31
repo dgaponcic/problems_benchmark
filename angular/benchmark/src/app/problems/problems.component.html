@@ -1,0 +1,17 @@
+<ul>
+  Problems:
+  <div *ngFor="let problem of problems">
+    <li>
+      <div id="problem">
+        <a id="problemLink" [routerLink]="['/problem', problem._id]">
+          {{problem.title}}
+        </a>
+        <div id="result">
+          <div *ngIf="problem.percentage">
+            {{problem.percentage}} %
+          </div>
+        </div>
+      </div>
+    </li>
+  </div>
+</ul>

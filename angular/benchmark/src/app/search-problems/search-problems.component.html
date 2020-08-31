@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <button class="search-icon" mat-icon-button disabled>
+    <mat-icon>search</mat-icon>
+  </button>
+  <input matInput type="search" class="form-control" placeholder="Search problem" [formControl]="searchField"
+    [matAutocomplete]="auto" [value]="userInput" #searchbar>
+  <mat-autocomplete #auto="matAutocomplete">
+
+    <mat-option *ngFor="let problem of dataSource" [value]="problem.title">
+      {{problem.title}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-toolbar>
