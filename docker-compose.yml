@@ -1,0 +1,22 @@
+version: '3'
+services:
+  angular-app:
+    build: ./angular/benchmark
+    ports:
+      - "8000:8000"
+    dns:
+      - 8.8.8.8
+  redis-server:
+    image: 'redis'
+  python-app:
+    build: ./python
+    depends_on: 
+      - "redis-server"
+  node-app:
+    build: ./node
+    ports:
+      - "8080:8080"
+    dns:
+      - 8.8.8.8
+    depends_on: 
+      - "redis-server"
