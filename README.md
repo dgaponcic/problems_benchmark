@@ -1,6 +1,6 @@
-# benchmark
+# Benchmark application
 
-Platform where people can find challenging programming problems and submit their results. 
+Hackerrank-inspired application for finding challenging programming problems and submit results. 
 As random-submitted code is executed for safety every component is contanerized.
 
 ### Key things:
